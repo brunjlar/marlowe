@@ -129,7 +129,7 @@ mkSymCase tvs typeBaseName sName ssName clauses =
      return [signature, declaration]
 
 mkSymConsts :: [TyVarBndr] -> TH.Name -> [Con] -> (ExpQ -> ExpQ) -> TH.Q [TH.Dec]
-mkSymConsts tvs _ [] f = error "No constructors for type"
+mkSymConsts _   _ [] _ = error "No constructors for type"
 mkSymConsts tvs sName [NormalC name params] f =
   do let nestFunName = ("s" ++ (nameBase name))
      let nfName = mkName nestFunName

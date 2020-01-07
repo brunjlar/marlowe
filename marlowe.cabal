@@ -34,13 +34,7 @@ library
                         Language.Marlowe.Analysis.MkSymb
     build-depends:      base >=4.9,
                         containers,
-                        QuickCheck,
-                        mtl,
                         sbv,
-                        tasty,
-                        tasty-hunit,
-                        tasty-smallcheck,
-                        tasty-quickcheck,
                         text,
                         template-haskell,
                         time,
@@ -53,18 +47,24 @@ executable marlowe
     default-language:   Haskell2010
     build-depends:      base >=4.9,
                         containers,
-                        QuickCheck,
                         marlowe,
                         mtl,
-                        sbv,
                         tasty,
                         tasty-hunit,
-                        tasty-smallcheck,
                         tasty-quickcheck,
-                        text,
-                        template-haskell,
-                        time,
-                        wl-pprint -any
+                        time
     hs-source-dirs:     app
     main-is:            Main.hs
 
+executable marlowe-ex1
+    default-language:   Haskell2010
+    build-depends:      base >=4.9,
+                        containers,
+                        marlowe,
+                        mtl,
+                        tasty,
+                        tasty-hunit,
+                        tasty-quickcheck,
+                        time
+    hs-source-dirs:     app
+    main-is:            Ex1.hs
